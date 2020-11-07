@@ -1,0 +1,14 @@
+{   
+    "exclude": ["node_modules", "dist"],
+    "compilerOptions": {
+        "module": "CommonJS",
+        "sourceMap": true,
+        "target": "ES6",
+        "moduleResolution": "node",
+        "declaration": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    }
+}

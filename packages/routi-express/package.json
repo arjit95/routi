@@ -1,0 +1,36 @@
+{
+  "name": "@arjit95/routi-express",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/arjit95/routi.git",
+    "directory": "packages/server-express"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rimraf -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build"
+  },
+  "dependencies": {
+    "@arjit95/routi-core": "file:../routi-core",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "rimraf": "~3.0.2"
+  },
+  "optionalDependencies": {
+    "cookie-parser": "^1.4.5"
+  }
+}

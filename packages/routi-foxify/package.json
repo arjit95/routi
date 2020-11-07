@@ -1,0 +1,35 @@
+{
+  "name": "@arjit95/routi-foxify",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/arjit95/routi.git",
+    "directory": "packages/server-foxify"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rimraf -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build"
+  },
+  "dependencies": {
+    "@arjit95/routi-core": "file:../routi-core",
+    "foxify": "^0.10.20"
+  },
+  "devDependencies": {
+    "rimraf": "~3.0.2"
+  },
+  "peerDependencies": {
+    "cookie-parser": "^1.4.5"
+  }
+}

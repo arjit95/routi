@@ -1,0 +1,50 @@
+{
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "pre-commit": "npm run format"
+    }
+  },
+  "scripts": {
+    "clean": "lerna run clean",
+    "build": "lerna run build",
+    "pub": "lerna publish",
+    "lint": "eslint 'packages/**/**.ts' 'examples/**/**.ts' --fix",
+    "format": "prettier \"**/*.ts\" --ignore-path ./.prettierignore --write"
+  },
+  "name": "routi",
+  "author": "Arjit Srivastava",
+  "module": "dist/routi.esm.js",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "husky": "^4.3.0",
+    "lerna": "^3.22.1",
+    "prettier": "^2.1.2",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.3"
+  }
+}
