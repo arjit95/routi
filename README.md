@@ -1,7 +1,7 @@
 <p align="center">
   <h3 align="center">Routi</h3>
   <p align="center">    
-    A mini rest api framework based on typescript decorators.
+    Simple web framework for node, using typescript decorators
     <br />
     <br />
     <a href="examples/">Examples</a>
